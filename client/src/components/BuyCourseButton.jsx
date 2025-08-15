@@ -15,7 +15,7 @@ const BuyCourseButton = ({ courseId }) => {
     try {
       
       var options = {
-        key: "rzp_test_SQ7HHXfY5ckqAa",
+        key: process.env.REACT_APP_KEY,
         amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency: order.currency,
         name: "ForLearner", //your business name
@@ -28,7 +28,7 @@ const BuyCourseButton = ({ courseId }) => {
           };
           console.log(body)
 
-          const { data } = await axios.post("http://localhost:8080/api/v1/purchase/validate", body);
+          const { data } = await axios.post("https://learning-management-system-4-n5pq.onrender.com/api/v1/purchase/validate", body);
           console.log(data);
         },
         prefill: {
