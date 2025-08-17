@@ -15,7 +15,7 @@ const BuyCourseButton = ({ courseId }) => {
     try {
       
       var options = {
-        key: process.env.REACT_APP_KEY,
+        key: import.meta.env.REACT_APP_KEY,
         amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency: order.currency,
         name: "ForLearner", //your business name
